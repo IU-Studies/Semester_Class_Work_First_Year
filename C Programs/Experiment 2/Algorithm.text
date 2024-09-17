@@ -1,0 +1,13 @@
+Algorithm addition, substraction, multiplication and division of any numbers.
+1. START
+2. DECLARE VARIABLES `num1`, `num2`, AND `result` AS INTEGER
+3. CLEAR THE SCREEN
+4. DISPLAY "ENTER FIRST NUMBER:-"
+5. READ THE INPUT VALUE INTO VARIABLE `num1`
+6. DISPLAY "ENTER SECOND NUMBER:-"
+7. READ THE INPUT VALUE INTO VARIABLE `num2`
+8. CALCULATE `result` AS `num1 + num2`
+9. DISPLAY THE VALUE OF `result`
+10. END
+
+Note: For other operation like substraction, division, multiplication just change operators in STEP 8.
