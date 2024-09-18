@@ -1,0 +1,19 @@
+Algorithm to calculate electricity bill.
+
+1. START
+2. DECLARE VARIABLES `units` AND `amount` AS FLOAT
+3. CLEAR THE SCREEN
+4. DISPLAY "ENTER NUMBER OF UNITS:-"
+5. READ THE INPUT VALUE INTO VARIABLE `units`
+6. CALCULATE `amount` BASED ON `units`:
+- a. IF `units` < 100:
+- i. SET `amount` TO `units * 3.5`
+- b. ELSE IF `units` < 200:
+- i. SET `amount` TO `((units - 100) * 4) + (100 * 3.5)`
+- c. ELSE IF `units` < 300:
+- i. SET `amount` TO `((units - 200) * 5) + (100 * 4) + (100 * 3.5)`
+- d. ELSE:
+- i. SET `amount` TO `(units - 300) * 10 + (100 * 5) + (100 * 4) + (100 * 3.5)`
+7. DISPLAY "YOUR AMOUNT IS" FOLLOWED BY `amount`
+8. WAIT FOR USER INPUT TO CLOSE THE PROGRAM
+9. END
