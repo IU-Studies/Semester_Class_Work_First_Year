@@ -1,0 +1,18 @@
+Algorithm to check weather the given number is even or odd.
+
+1. START
+2. DECLARE VARIABLES
+- `number`: Variable to store the input number.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT NUMBER
+- Prompt the user: "Enter a number:-"
+- Read the number into variable `number` using `scanf`.
+5. CHECK WHETHER THE NUMBER IS EVEN OR ODD
+- IF (`number` modulo 2 is equal to 0), then:
+- Print "Number is Even".
+- ELSE:
+- Print "Number is Odd".
+6. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+7. END
