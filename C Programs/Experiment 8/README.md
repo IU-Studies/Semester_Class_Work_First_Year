@@ -1,1 +1,1 @@
-Program to check given year is leap or not.
+Write a C program to check given year is leap or not.
