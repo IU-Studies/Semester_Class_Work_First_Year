@@ -1,0 +1,18 @@
+Algorithm to check weather given year is leap or not.
+
+1. START
+2. DECLARE VARIABLES
+- `year`: Variable to store the input year.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT YEAR
+- Prompt the user: "Enter year:-"
+- Read the year into variable `year` using `scanf`.
+5. CHECK IF THE YEAR IS A LEAP YEAR
+- IF ((year is divisible by 400) OR ((year is divisible by 4) AND (year is not divisible by 100))), then:
+- Print "Leap Year".
+- ELSE:
+- Print "Not Leap".
+6. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+7. END
