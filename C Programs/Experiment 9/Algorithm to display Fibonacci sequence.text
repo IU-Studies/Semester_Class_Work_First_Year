@@ -1,0 +1,30 @@
+Algorithm to display Fibonacci sequence.
+
+1. START
+2. DECLARE VARIABLES
+- `a = 0`: Variable to store the first number of the Fibonacci sequence.
+- `b = 1`: Variable to store the second number of the Fibonacci sequence.
+- `user`: Variable to store the length of the Fibonacci sequence.
+- `c`: Variable to store the next number in the Fibonacci sequence.
+- `i`: Loop control variable.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT SERIES LENGTH
+- Prompt the user: "Enter series length:-"
+- Read the length of the Fibonacci sequence into variable `user` using `scanf`.
+5. CHECK IF SERIES LENGTH IS 1
+- IF `user` is equal to 1, then:
+- Print the first number `a`.
+- ELSE:
+- Print the first two numbers `a` and `b`.
+6. GENERATE AND PRINT FIBONACCI SEQUENCE
+- Use a loop to generate and print the Fibonacci sequence.
+- Initialize `i` to 1.
+- WHILE `i` is less than or equal to `user`:
+- Calculate the next Fibonacci number `c` by adding `a` and `b`.
+- Update the values of `a` and `b` for the next iteration.
+- Print the Fibonacci number `c`.
+- Increment `i`.
+7. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+8. END
