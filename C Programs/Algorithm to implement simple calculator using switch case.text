@@ -1,0 +1,27 @@
+Algorithm to implement simple calculator using switch case.
+
+1. START
+2. DECLARE VARIABLES
+- `operator`: Character variable to store the operator (+, -, *, /).
+- `num1`, `num2`: Integer variables to store the two numbers.
+- `result`: Integer variable to store the result of the operation.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT OPERATOR
+- Prompt the user: "Enter operator (+, -, *, /):-"
+- Read the operator into variable `operator` using `scanf`.
+5. INPUT TWO NUMBERS
+- Prompt the user: "Enter two numbers:-"
+- Read the two numbers into variables `num1` and `num2` using `scanf`.
+6. PERFORM OPERATION BASED ON OPERATOR
+- Use a switch-case statement to perform the appropriate operation based on the operator:
+- CASE '+': Add `num1` and `num2` and store the result in `result`. Print the addition result.
+- CASE '-': Subtract `num2` from `num1` and store the result in `result`. Print the subtraction result.
+- CASE '*': Multiply `num1` and `num2` and store the result in `result`. Print the multiplication
+result.
+- CASE '/': If `num2` is not zero, divide `num1` by `num2` and store the result in `result`. Print the
+division result. If `num2` is zero, print "Error".
+- DEFAULT: Print "Error" for invalid operators.
+7. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+8. END
