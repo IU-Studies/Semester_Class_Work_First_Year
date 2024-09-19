@@ -1,0 +1,24 @@
+Algorithm to find factorial of a number.
+
+1. START
+2. DECLARE VARIABLES
+- `number`: Variable to store the input number.
+- `i`: Loop control variable.
+- `count = 1`: Variable to store the factorial value, initialized to 1.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT NUMBER
+- Prompt the user: "Enter a number:-"
+- Read the number into variable `number` using `scanf`.
+5. CALCULATE FACTORIAL
+- Use a loop to calculate the factorial of the input number.
+- Initialize `i` to 1.
+- WHILE `i` is less than or equal to `number`:
+- Multiply `count` by `i` and store the result in `count`.
+- Increment `i` by 1 in each iteration.
+6. PRINT FACTORIAL
+- Print the factorial of the input number.
+- Use `printf` to display: "Factorial of %d is %d", `number`, `count`.
+7. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+8. END
