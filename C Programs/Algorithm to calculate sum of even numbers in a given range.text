@@ -1,0 +1,26 @@
+Algorithm to calculate sum of even numbers in a given range.
+
+1. START
+2. DECLARE VARIABLES
+- `start_range`, `end_range`: Variables to store the start and end of the range.
+- `i`: Loop control variable.
+- `count`: Variable to store the sum of even numbers.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT START AND END RANGE
+- Prompt the user: "Enter a start range:-"
+- Read the start range into variable `start_range` using `scanf`.
+- Prompt the user: "Enter an end range:-"
+- Read the end range into variable `end_range` using `scanf`.
+5. CALCULATE THE SUM OF EVEN NUMBERS
+- Initialize `count` to 0.
+- Use a loop to iterate through the numbers from `start_range` to `end_range`.
+- FOR `i` from `start_range` to `end_range`:
+- IF `i` is even (i.e., `i % 2 == 0`), add `i` to `count`.
+- ELSE, continue to the next iteration.
+6. PRINT THE SUM OF EVEN NUMBERS
+- Print the sum of even numbers within the given range.
+- Use `printf` to display: "The sum of even numbers in the given range is %d", `count`.
+7. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+8. END
