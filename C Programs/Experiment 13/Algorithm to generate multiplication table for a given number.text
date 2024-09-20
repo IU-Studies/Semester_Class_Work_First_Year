@@ -1,0 +1,20 @@
+Algorithm to generate multiplication table for a given number.
+
+1. START
+2. DECLARE VARIABLES
+- `number`: Variable to store the given number.
+- `i`: Loop control variable.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT THE NUMBER
+- Prompt the user: "Enter a number:-"
+- Read the number into variable `number` using `scanf`.
+5. GENERATE AND DISPLAY MULTIPLICATION TABLE
+- Use a loop to generate and display the multiplication table for the given number.
+- FOR `i` from 1 to 10:
+- Print the multiplication expression using `printf`:
+- Print: `number`, " X ", `i`, " = ", `number * i`.
+- Print a newline.
+6. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+7. END
