@@ -1,0 +1,29 @@
+Algorithm to find Max and Min in an array.
+
+1. START
+2. DECLARE VARIABLES
+- `arr[100]`: Array to store the elements.
+- `i`, `user`: Loop control variables and the number of elements.
+- `min`, `max`: Variables to store the minimum and maximum values.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT NUMBER OF ELEMENTS
+- Prompt the user: "Enter number of elements:-"
+- Read the number of elements into variable `user` using `scanf`.
+5. INPUT ELEMENTS INTO ARRAY
+- Prompt the user: "Enter elements in array:-"
+- Use a loop to read elements into `arr`.
+- FOR `i` from 0 to `user - 1`:
+- Read an element into `arr[i]` using `scanf`.
+6. FIND MAXIMUM AND MINIMUM
+- Initialize `min` and `max` to the first element of the array (`arr[0]`).
+- Use a loop to iterate through the array and update `min` and `max` as necessary.
+- FOR `i` from 0 to `user - 1`:
+- IF `arr[i]` is greater than `max`, update `max` to `arr[i]`.
+- IF `arr[i]` is less than `min`, update `min` to `arr[i]`.
+7. PRINT MAXIMUM AND MINIMUM
+- Print the values of `max` and `min`.
+- Use `printf` to display: "Max is %d and Min is %d".
+8. WAIT FOR USER INPUT
+- Use `getch()` to wait for a key press before closing the program.
+9. END
