@@ -1,0 +1,21 @@
+Algorithm to print 3X3 matrix.
+
+1. START
+2. DECLARE VARIABLES
+- `arr[3][3]`: Array to store the elements of the matrix.
+- `i`, `j`: Loop control variables.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT ELEMENTS INTO THE MATRIX
+- Prompt the user: "Enter elements in array:-"
+- Use nested loops to read elements into `arr`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Read an element into `arr[i][j]` using `scanf`.
+5. PRINT THE MATRIX
+- Use nested loops to print the elements of `arr`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Print `arr[i][j]`.
+- Print a newline after printing each row.
+6. END
