@@ -1,0 +1,29 @@
+Algorithm to print sum of two matrix.
+
+1. START
+2. DECLARE 3x3 INTEGER ARRAYS `arrA`, `arrB`, AND `arrC`
+3. DECLARE VARIABLES `i` AND `j` AS INTEGERS
+4. CLEAR THE SCREEN
+5. DISPLAY "ENTER ELEMENTS IN ARRAY A:-"
+6. READ ELEMENTS INTO ARRAY `arrA`
+- a. FOR EACH ROW `i` FROM 0 TO 2:
+- i. FOR EACH COLUMN `j` FROM 0 TO 2:
+- - INPUT ELEMENT INTO `arrA[i][j]`
+7. DISPLAY "ENTER ELEMENTS IN ARRAY B:-"
+8. READ ELEMENTS INTO ARRAY `arrB`
+- a. FOR EACH ROW `i` FROM 0 TO 2:
+- i. FOR EACH COLUMN `j` FROM 0 TO 2:
+- - INPUT ELEMENT INTO `arrB[i][j]`
+9. CALCULATE THE SUM OF MATRICES `arrA` AND `arrB`, STORE IN `arrC`
+- a. FOR EACH ROW `i` FROM 0 TO 2:
+- i. FOR EACH COLUMN `j` FROM 0 TO 2:
+- - SET `arrC[i][j]` TO `arrA[i][j] + arrB[i][j]`
+10. PRINT THE SUM MATRIX `arrC`
+- a. FOR EACH ROW `i` FROM 0 TO 2:
+- i. FOR EACH COLUMN `j` FROM 0 TO 2:
+- - PRINT `arrC[i][j]`
+- ii. PRINT NEW LINE
+11. WAIT FOR USER INPUT TO CLOSE THE PROGRAM
+12. END
+
+Note: For substraction just change operator in STEP 9.
