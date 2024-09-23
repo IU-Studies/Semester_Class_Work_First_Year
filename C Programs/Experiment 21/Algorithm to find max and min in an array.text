@@ -1,0 +1,22 @@
+Algorithm to find max and min in an array.
+
+1. START
+2. DECLARE FUNCTION `Max_Min_Array`
+- Parameters: `int arr[]`, `int length`
+3. IN FUNCTION `Max_Min_Array`
+- a. Declare variables `i`, `max`, `min`
+- b. Initialize `max` and `min` with the first element of the array
+- c. Loop through the array from index 0 to `length-1`
+- i. If `arr[i]` is greater than `max`, update `max`
+- ii. If `arr[i]` is less than `min`, update `min`
+- d. Print the values of `max` and `min`
+4.IN MAIN FUNCTION
+- a. Declare variables `i`, `length`, `arr[100]`
+- b. Clear the screen
+- c. Prompt the user to enter the length of the array
+- d. Read the length into variable `length`
+- e. Prompt the user to enter the elements of the array
+- f. Loop through the array to read the elements into `arr`
+- g. Call `Max_Min_Array` with `arr` and `length`
+- h. Wait for user input to close the program
+5. END
