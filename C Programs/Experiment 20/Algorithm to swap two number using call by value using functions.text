@@ -1,0 +1,22 @@
+Algorithm to swap two number using call by value using functions.
+
+1. START
+2. DECLARE FUNCTION `number_swap`
+- Parameters: `int a`, `int b`
+3. IN FUNCTION `number_swap`
+- a. Declare variable `c`
+- b. Print the values of `a` and `b` before swapping
+- c. Assign the value of `a` to `c`
+- d. Assign the value of `b` to `a`
+- e. Assign the value of `c` to `b`
+- f. Print the values of `a` and `b` after swapping
+4. IN MAIN FUNCTION
+- a. Declare variables `num1` and `num2`
+- b. Clear the screen
+- c. Prompt the user to enter the first number
+- d. Read the first number into variable `num1`
+- e. Prompt the user to enter the second number
+- f. Read the second number into variable `num2`
+- g. Call `number_swap` with `num1` and `num2`
+- h. Wait for user input to close the program
+5. END
