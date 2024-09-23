@@ -1,0 +1,37 @@
+Algorithm to multiply 3X3 matrix.
+
+1. START
+2. DECLARE VARIABLES
+- `arrA[3][3]`, `arrB[3][3]`, `arrC[3][3]`: Arrays to store matrices A, B, and the resultant matrix C.
+- `i`, `j`, `k`: Loop control variables.
+3. CLEAR SCREEN
+- Use `clrscr()` to clear the console screen.
+4. INPUT ELEMENTS INTO MATRIX A
+- Prompt the user: "Enter elements in array A:-"
+- Use nested loops to read elements into `arrA`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Read an element into `arrA[i][j]` using `scanf`.
+5. INPUT ELEMENTS INTO MATRIX B
+- Prompt the user: "Enter elements in array B:-"
+- Use nested loops to read elements into `arrB`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Read an element into `arrB[i][j]` using `scanf`.
+6. INITIALIZE MATRIX C TO ZERO
+- Use nested loops to set all elements of `arrC` to 0.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Set `arrC[i][j]` to 0.
+7. MULTIPLY MATRICES A AND B
+- Use nested loops to perform matrix multiplication and store the result in `arrC`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- FOR `k` from 0 to 2:
+- Add `arrA[i][k] * arrB[k][j]` to `arrC[i][j]`.
+8. PRINT THE RESULTANT MATRIX C
+- Use nested loops to print the elements of `arrC`.
+- FOR `i` from 0 to 2:
+- FOR `j` from 0 to 2:
+- Print `arrC[i][j]`.
+9. END
