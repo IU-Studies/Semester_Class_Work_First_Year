@@ -1,0 +1,18 @@
+Algorithm to calculate factorial using function.
+1. START
+2. DECLARE FUNCTION `factorial`
+- Parameters: `int a`
+3. IN FUNCTION `factorial`
+- a. Declare variables `i`, `count`
+- b. Initialize `count` to 1
+- c. Loop from 1 to `a` (inclusive)
+- i. Multiply `count` by `i` in each iteration
+- d. Print the factorial result
+4. IN MAIN FUNCTION
+- a. Declare variable `user`
+- b. Clear the screen
+- c. Prompt the user to enter a number
+- d. Read the number into variable `user`
+- e. Call `factorial` with `user`
+- f. Wait for user input to close the program
+5. END
