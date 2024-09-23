@@ -1,0 +1,26 @@
+Algorithm to calculate and displays the sum and average of a set of numbers using pointer.
+
+1. START
+2. DEFINE FUNCTION `SumAndAverage` WITH PARAMETERS:
+- `int *arr` (pointer to array)
+- `int size` (size of array)
+- `int *sum` (pointer to sum variable)
+- `float *average` (pointer to average variable)
+3. INITIALIZE `*sum` TO 0
+4. DECLARE VARIABLE `i` AS INTEGER
+5. FOR EACH INDEX `i` FROM 0 TO `size-1`:
+- a. ADD ELEMENT `*(arr + i)` TO `*sum`
+6. CALCULATE `*average` AS `*sum / size`
+7. RETURN FROM FUNCTION `SumAndAverage`
+8. DECLARE VARIABLES `size`, `arr[100]`, `sum`, AND `i` AS INTEGERS, `average` AS FLOAT
+9. CLEAR THE SCREEN
+10. DISPLAY "ENTER SIZE OF ARRAY:-"
+11. READ THE INPUT VALUE INTO VARIABLE `size`
+12. DISPLAY "ENTER ELEMENTS IN ARRAY:-"
+13. FOR EACH INDEX `i` FROM 0 TO `size-1`:
+- a. READ ELEMENT INTO `arr[i]`
+14. CALL FUNCTION `SumAndAverage` WITH PARAMETERS `arr`, `size`, `&sum`, `&average`
+15. DISPLAY "SUM IS" FOLLOWED BY `sum`
+16. DISPLAY "AVERAGE IS" FOLLOWED BY `average`
+17. WAIT FOR USER INPUT TO CLOSE THE PROGRAM
+18. END
