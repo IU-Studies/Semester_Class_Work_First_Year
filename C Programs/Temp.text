@@ -202,3 +202,11 @@ CLOSE cursor_name;
 -- Deallocate the cursor
 DEALLOCATE cursor_name;
 
+#Function
+CREATE FUNCTION function_name (parameters)
+RETURNS return_datatype
+AS
+BEGIN
+    -- Function logic (SQL statements)
+    RETURN value;
+END;
