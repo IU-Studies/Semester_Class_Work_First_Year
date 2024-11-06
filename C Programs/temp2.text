@@ -1,0 +1,342 @@
+/* I. Write an SQL query to analyze sales data by grouping it by product category and
+calculate the total revenue for each category. Display only the categories with total revenue
+greater than $10,000. */
+
+SELECT product_category, SUM(revenue) AS total_revenue
+FROM sales
+GROUP BY product_category
+HAVING SUM(revenue) > 10000;
+
+
+/* II. Develop an SQL query to retrieve the department names and the count of employees in
+each department. Display only the departments that have more than 50 employees. */
+
+SELECT department, COUNT(employee_id) AS total_employees
+FROM Dept_info
+GROUP BY department
+HAVING COUNT(employee_id) > 50;
+
+
+/* III. Create an SQL query to group the products by their suppliers and calculate the average
+stock quantity for each supplier. Display only the suppliers whose average stock quantity exceeds
+500 units. */
+
+SELECT suppliers, AVG(stock_quantity) AS avg_qty
+FROM sales
+GROUP BY suppliers
+HAVING AVG(stock_quantity) > 500;
+
+
+/*  IV. Write an SQL query to group customers by their age range (e.g., 18-25, 26-35, etc.) and
+calculate the count of customers in each age range. Display only the age ranges with more than
+100 customers */
+
+SELECT 
+    CASE 
+        WHEN age BETWEEN 18 AND 25 THEN '18-25'
+        WHEN age BETWEEN 26 AND 35 THEN '26-35'
+        WHEN age BETWEEN 36 AND 45 THEN '36-45'
+        WHEN age BETWEEN 46 AND 55 THEN '46-55'
+        WHEN age BETWEEN 56 AND 65 THEN '56-65'
+        ELSE '66+' 
+    END AS age_range,
+    COUNT(*) AS customer_count
+FROM customers
+GROUP BY age_range
+HAVING COUNT(*) > 100;
+
+
+/*  V. Develop an SQL query to analyze exam scores by grouping them by the subject and
+calculate the average score for each subject. Display only the subjects with an average score
+above 80. */
+
+SELECT subjects, AVG(scores) AS avg_scores
+FROM marks
+GROUP BY subjects
+HAVING AVG(score) > 80;
+
+
+----------------------------------------------------------------------------------
+/* Consider Employee table with following attributes
+(emp_id,_name, last_name, department_id,salary)
+And Department table with attributes (department_id,department_name) */
+
+
+/*  1)Find the names of employees who work in the same department as 'Jane Smith' */
+
+SELECT e1._name FROM employee e1 
+JOIN employee e2 ON e1.department_id = e2.department_id
+WHERE e2._name = "Jane" AND e2.last_name = "Smith" AND e1.department_id = e2.department_id;
+
+/* 2)List the employees whose salary is above the average salary in their department. */
+
+SELECT _name FROM employee
+WHERE salary > (SELECT AVG(SALARY) from employee);
+
+/*  3) Retrieve the departments which have at least one employee with a salary
+ greater than $75,000. */
+
+SELECT department_name from employee
+GROUP BY department_name
+HAVING max(salary)>75000;
+
+/*  4) Find the highest paid employee in each department. */ 
+
+SELECT department_name, max(salary) from employee
+GROUP BY department_name;
+
+--------------------------------------------------------------------
+
+/* employees(employee_id, name, department_id)
+ departments(department_id, department_name) */
+
+/* 1) Write a query to get the names of all employees and their corresponding
+ department names. */
+
+select e.name, d.department_name from employees e
+JOIN departments d ON e.department_id = d.department_id;
+
+
+
+/*  2) Write a query to get all employees and their corresponding department
+ names. Include employees who do not belong to any department. (Hint-Left
+ Join) */
+
+SELECT e.name, d.department_name
+FROM employees e 
+JOIN departments d ON e.department_id = d.department_id;
+
+
+
+/* 3) Write a query to find the total number of employees in each department */
+
+SELECT COUNT(name)
+FROM employees e 
+JOIN departments d ON e.department_id = d.department_id
+GROUP BY department_name;
+
+
+/* Write a query to find the names of employees who work in the department with the
+ highest number of employees. */
+
+SELECT e.name
+FROM employees e
+JOIN (
+    SELECT department_id
+    FROM employees
+    GROUP BY department_id
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+) AS max_dept ON e.department_id = max_dept.department_id;
+
+
+--------------------------------------------------------------------------------
+/* 1)Write a PL/SQL program using WHILE loop for calculating the average of the numbers
+ entered by the user. Stop the entry of numbers whenever the user enters the number 0 */
+
+
+DROP PROCEDURE IF EXISTS calculate_average;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE calculate_average(
+    IN num1 INT,
+    IN num2 INT,
+    IN num3 INT,
+    IN num4 INT
+)
+BEGIN
+    DECLARE v_number INT DEFAULT 0;    
+    DECLARE v_sum INT DEFAULT 0;       
+    DECLARE v_count INT DEFAULT 0;     
+    DECLARE v_avg FLOAT;               
+
+    -- Process each number
+    SET v_number = num1;
+    IF v_number != 0 THEN
+        SET v_sum = v_sum + v_number;
+        SET v_count = v_count + 1;
+    END IF;
+
+    SET v_number = num2;
+    IF v_number != 0 THEN
+        SET v_sum = v_sum + v_number;
+        SET v_count = v_count + 1;
+    END IF;
+
+    SET v_number = num3;
+    IF v_number != 0 THEN
+        SET v_sum = v_sum + v_number;
+        SET v_count = v_count + 1;
+    END IF;
+
+    SET v_number = num4;
+    IF v_number != 0 THEN
+        SET v_sum = v_sum + v_number;
+        SET v_count = v_count + 1;
+    END IF;
+
+   
+    IF v_count > 0 THEN
+        SET v_avg = v_sum / v_count;
+        SELECT CONCAT('The average is: ', v_avg) AS result;
+    ELSE
+        SELECT 'No numbers were entered.' AS result;
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+CALL calculate_average(5, 10, 15, 0); 
+
+
+/* Palindrome */
+DELIMITER $$
+
+CREATE PROCEDURE check_palindrome(IN original_string VARCHAR(100))
+BEGIN
+    DECLARE reversed_string VARCHAR(100);
+
+    SET reversed_string = REVERSE(original_string);
+
+    IF original_string = reversed_string THEN
+        SELECT CONCAT(original_string, ' is a palindrome.') AS result;
+    ELSE
+        SELECT CONCAT(original_string, ' is not a palindrome.') AS result;
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+CALL check_palindrome('madam');
+
+
+/*  4)Scenario based:- Employee Management System
+ Question:-Your company has an employee management system with a table named employees containing
+ columns such as employee_id, first_name, last_name, salary, and department_id.-Write a PL/SQL stored procedure named update_salary that takes an employee_id and a
+ percentage increase, then updates the employee's salary by the given percentage */
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    salary DECIMAL(10,2),
+    department_id INT
+);
+
+INSERT INTO employees (employee_id, first_name, last_name, salary, department_id)
+VALUES 
+(101, 'John', 'Doe', 5000, 1),
+(102, 'Jane', 'Smith', 6000, 2),
+(103, 'Alice', 'Johnson', 5500, 1);
+
+
+DELIMITER $$
+
+CREATE PROCEDURE update_salary(IN p_employee_id INT, IN p_percentage_increase DECIMAL(5,2))
+BEGIN
+    DECLARE v_current_salary DECIMAL(10,2);
+
+    
+    SELECT salary INTO v_current_salary
+    FROM employees
+    WHERE employee_id = p_employee_id;
+
+    
+    IF v_current_salary IS NULL THEN
+        
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Employee not found!';
+    ELSE
+        
+        UPDATE employees
+        SET salary = v_current_salary + (v_current_salary * p_percentage_increase / 100)
+        WHERE employee_id = p_employee_id;
+       
+        SELECT CONCAT('Salary updated successfully for employee ID ', p_employee_id) AS result;
+    END IF;
+END$$
+
+DELIMITER ;
+
+CALL update_salary(101, 10);
+
+
+
+
+----------------------------------------------------------------------------------
+
+/*  5)Scenario 2: Inventory Control
+ Question:-You are tasked with managing the inventory for an online store. There is a table inventory with
+ columns product_id, product_name, quantity, and price.-Write a PL/SQL function named calculate_inventory_value that returns the total value of the
+ inventory (sum of quantity * price for all products).-This function should be called within a PL/SQL block to display the total inventory value. */
+
+
+CREATE TABLE inventory (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    quantity INT,
+    price DECIMAL(10,2)
+);
+
+INSERT INTO inventory (product_id, product_name, quantity, price)
+VALUES
+(1, 'Product A', 100, 25.50),
+(2, 'Product B', 50, 40.00),
+(3, 'Product C', 200, 15.75),
+(4, 'Product D', 75, 30.20);
+
+DELIMITER $$
+
+CREATE FUNCTION calculate_inventory_value() 
+RETURNS DECIMAL(15,2)
+DETERMINISTIC
+BEGIN
+    DECLARE total_value DECIMAL(15,2);
+
+    SELECT SUM(quantity * price) INTO total_value
+    FROM inventory;
+
+    RETURN total_value;
+END$$
+
+DELIMITER ;
+
+
+SELECT calculate_inventory_value() AS total_inventory_value;
+
+
+-------------------------------------------------------------
+
+Trigger
+
+CREATE TABLE main (
+  id INT,
+  salary INT
+);
+
+INSERT INTO main (id, salary) VALUES (1, 10000);
+INSERT INTO main (id, salary) VALUES (2, 30000);
+
+
+CREATE TABLE backup (
+  id INT,
+  salary INT
+);
+
+
+DELIMITER $$
+
+CREATE TRIGGER t1
+BEFORE DELETE ON main
+FOR EACH ROW
+BEGIN
+  INSERT INTO backup (id, salary) 
+  VALUES (OLD.id, OLD.salary);
+END$$
+
+DELIMITER ;
+
+
